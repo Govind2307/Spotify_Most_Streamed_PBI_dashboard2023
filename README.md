@@ -4,7 +4,7 @@
 
 <p id="description">Power BI dashboard to visualise spotify most streamed songs using custom visuals image priview and heat map.</p>
 
-
+![Screenshot 2024-03-10 213531.png](Screenshot%202024-03-10%20213531.png)
 
   
   
