@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"name": "dataset"},
+  "spacing": 30,
+  "bounds": "flush",
+  "vconcat": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "tooltip": true,
+        "cornerRadius": 6
+      },
+      "encoding": {
+        "y": {
+          "field": "Day of Week",
+          "type": "ordinal",
+          "sort": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          "axis": {"labelColor": "white", "title": null}
+        },
+        "x": {
+          "field": "Month",
+          "type": "ordinal",
+          "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "axis": {"labelColor": "white", "title": null}
+        },
+        "color": {"field": "_Track", "type": "quantitative", "scale": {"scheme": "pbiColorLinear"}}
+      },
+      "height": 150,
+      "width": 310
+    },
+    {
+      "height": 50,
+      "width": 310,
+      "mark": {
+        "type": "bar",
+        "stroke": null,
+        "cornerRadiusEnd": 4,
+        "tooltip": true,
+        "color": {"expr": "pbiColor(5)"}
+      },
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "axis": {"labelColor": "white", "title": null}
+        },
+        "y": {"field": "_Track", "aggregate": "mean", "axis": {"labelColor": "white", "title": null}}
+      }
+    }
+  ]
+}
